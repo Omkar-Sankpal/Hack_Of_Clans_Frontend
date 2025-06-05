@@ -220,7 +220,7 @@ export const useClanStore = create((set, get) => ({
         if(!isAuthenticated || get().socket?.connected) return ;
         console.log("connect socket ke andar hu mein ...")
 
-        const socket = io("http://localhost:5000", {
+        const socket = io("https://hack-of-clans-backend.onrender.com", {
         withCredentials: true,
         });
         socket.connect()

@@ -3,6 +3,8 @@ import axios from 'axios';
 
 const API_URL = "https://hack-of-clans-backend.onrender.com/api/hackofclans"; 
 
+axios.defaults.withCredentials = true ;
+
 export const useExploreStore =  create((set,get) => ({
 
     hackathons : [], 
@@ -68,7 +70,7 @@ export const useExploreStore =  create((set,get) => ({
 
     get15Teams: async() => {
         try {
-            const response = await axios.get(`http://localhost:5000/api/hackofclans/explore/get-teams`); 
+            const response = await axios.get(`https://hack-of-clans-backend.onrender.com/api/hackofclans/explore/get-teams`); 
 
             set({
                 top15Teams: response.data
