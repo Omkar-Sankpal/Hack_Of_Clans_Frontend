@@ -2,9 +2,7 @@ import { create } from 'zustand';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
-const API_URL = import.meta.env.MODE === "development" 
-  ? "http://localhost:5000/api/hackofclans" 
-  : "/api/hackofclans";
+const API_URL = "http://localhost:5000/api/hackofclans" ;
 
 export const useTeamStore = create((set, get) => ({
   teams: [],
