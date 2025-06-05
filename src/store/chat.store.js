@@ -89,28 +89,31 @@ export const useChatStore =  create((set,get) => ({
   },
 
   getLatestMessages: () => {
-    const {selectedTeam} = get(); 
-    if(!selectedTeam) return ; 
+    const { selectedTeam } = get(); 
+    if (!selectedTeam) return; 
 
-    const socket = useClanStore.getState().socket; 
+    const socket = useClanStore.getState().socket;
 
-    socket.off("LatestMessage"); // this is done to prevent duplicate listners 
+    if (!socket || !socket.connected) {
+        console.warn("Socket not connected — can't fetch latest messages");
+        return;
+    }
+
+    socket.off("LatestMessage"); // avoid duplicate listeners
 
     socket.on("LatestMessage", (LatestMessage) => {
-      const isMessageFromSelectedUser = LatestMessage.receieverId  === selectedTeam;
+        const isMessageFromSelectedUser = LatestMessage.receieverId === selectedTeam;
 
-      if(!isMessageFromSelectedUser){
-        // will implement unread message wala part as well 
-        // for now i will retunr 
-        return ;
-      }
-      set({
-        teamMessages: [...get().teamMessages, LatestMessage]
-      })
-    })
+        if (!isMessageFromSelectedUser) {
+            // Will implement unread message part later
+            return;
+        }
 
-  },
-
+        set({
+            teamMessages: [...get().teamMessages, LatestMessage]
+        });
+    });
+},
   getNotification: async({userId}) => {
     try {
       
