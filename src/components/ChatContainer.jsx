@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { formatTimeInChat } from '../Utils/date.js';
+import { formatTimeInChat } from '../utils/date.js';
 import { useChatStore } from '../store/chat.store.js';
 
 
