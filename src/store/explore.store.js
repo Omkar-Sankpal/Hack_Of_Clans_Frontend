@@ -1,7 +1,7 @@
 import {create} from 'zustand'; 
 import axios from 'axios';
 
-const API_URL = "http://localhost:5000/api/hackofclans"; 
+const API_URL = "https://hack-of-clans-backend.onrender.com/api/hackofclans"; 
 
 export const useExploreStore =  create((set,get) => ({
 
