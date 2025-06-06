@@ -6,6 +6,8 @@
 
 ## Video Demo 
 
+Sorry for the quality of video, I had to compress the video below 10MB.
+
 https://github.com/user-attachments/assets/a4fb1ade-15bd-4be4-9753-cf2722943da3
 
 ---
