@@ -21,17 +21,31 @@ export const useClanStore = create((set, get) => ({
     userTeams: [],
     socket: null, 
 
-    signup: async(email, password, name) => {
-        set({isLoading:true, error:null}); 
-        try {
-            const response = await axios.post(`${API_URL}/signup`, {email, password, name});
-            get().connectSocket();
-            set ({user:response.data.user, isAuthenticated:true, isLoading:false});
-        } catch (error) {
-            set({error:error.response.data.message || "Error signing up", isLoading: false}); 
-            throw error; 
-        }
+    signup: async (email, password, name) => {
+    set({ isLoading: true, error: null });
+
+    try {
+        const response = await axios.post(`${API_URL}/signup`, { email, password, name });
+
+        // 👇 first update auth state
+        set({
+        user: response.data.user,
+        isAuthenticated: true,
+        isLoading: false
+        });
+
+        // 👇 then connect socket (after auth is set)
+        get().connectSocket();
+
+    } catch (error) {
+        set({
+        error: error.response?.data?.message || "Error signing up",
+        isLoading: false
+        });
+        throw error;
+    }
     },
+
 
     verifyEmail: async(code) => {
         set({isLoading:true, error: null}); 
@@ -45,27 +59,39 @@ export const useClanStore = create((set, get) => ({
         }
     },
 
-    checkAuth: async() => {
-        set({isCheckingAuth: true, error: null}); 
-        try {
-            const response = await axios.get(`${API_URL}/check-auth`); 
-            console.log("check auth ke andar hu mein..");
-            get().connectSocket();
+        checkAuth: async () => {
+    set({ isCheckingAuth: true, error: null });
 
-            console.log(response , "res in check auth ")
+    try {
+        const response = await axios.get(`${API_URL}/check-auth`);
 
-            set({user: response.data.user,
-                isAuthenticated: true,
-                skills: response.data.user.skills,
-                personal_Info: {bio: response.data.user.personal_info.bio, college: response.data.user.personal_info.college},
-                personal_links: {github_link: response.data.user.personal_links.github_link,
-                                 linkdin_link: response.data.user.personal_links.linkdin_link, 
-                                 portfolio_link: response.data.user.personal_links.portfolio_link},
-                profilePic: response.data.user.profilePic,
-                isCheckingAuth: false});
-        } catch (error) {
-            set({error: null, isCheckingAuth: false, isAuthenticated: false});
-        }
+        set({
+        user: response.data.user,
+        isAuthenticated: true,
+        skills: response.data.user.skills,
+        personal_Info: {
+            bio: response.data.user.personal_info.bio,
+            college: response.data.user.personal_info.college
+        },
+        personal_links: {
+            github_link: response.data.user.personal_links.github_link,
+            linkdin_link: response.data.user.personal_links.linkdin_link,
+            portfolio_link: response.data.user.personal_links.portfolio_link
+        },
+        profilePic: response.data.user.profilePic,
+        isCheckingAuth: false
+        });
+
+        // 👇 connect socket after auth state is fully updated
+        get().connectSocket();
+
+    } catch (error) {
+        set({
+        error: null,
+        isCheckingAuth: false,
+        isAuthenticated: false
+        });
+    }
     },
 
     logout: async() => {
@@ -81,23 +107,33 @@ export const useClanStore = create((set, get) => ({
     },
 
     login: async(email, password) => {
-        set({isLoading: true, error: null}); 
-        try {
-            const response = await axios.post(`${API_URL}/login`, {email, password});
-            console.log("login ke andar huu...");
-            get().connectSocket(); 
-            set({
-                isAuthenticated: true,
-                user: response.data.user,
-                skills: response.data.user.skills, 
-                error: null , 
-                isLoading: false,
-            })
-        } catch (error) {
-            set({error: error.response?.data?.message || "Error logging in", isLoading: false}); 
-            throw error; 
-        }
+    set({ isLoading: true, error: null });
+
+    try {
+        const response = await axios.post(`${API_URL}/login`, { email, password });
+        console.log("login ke andar huu...");
+
+        // ✅ first set state
+        set({
+        isAuthenticated: true,
+        user: response.data.user,
+        skills: response.data.user.skills,
+        error: null,
+        isLoading: false,
+        });
+
+        // ✅ then call connectSocket
+        get().connectSocket();
+
+    } catch (error) {
+        set({
+        error: error.response?.data?.message || "Error logging in",
+        isLoading: false
+        });
+        throw error;
+    }
     },
+
 
     ForgotPassword: async(email) => {
         set({isLoading: true, error: false}); 
@@ -127,24 +163,33 @@ export const useClanStore = create((set, get) => ({
         }
     },
 
-    googleLogin: async (code) => {
-        set({ isLoading: true, error: null });
-        try {
-            console.log("Code is : ",code)
-          const response = await axios.get(`${API_URL}/google?code=${code}`);
-          get().connectSocket();
-          console.log("Response from sever is :: ", response);
-          console.log(response.data);
-          set({  
-            isAuthenticated: true,
-            user: response.data,
-            error: null,
-            isLoading: false });
-        } catch (error) {
-          set({ error: error.response?.data?.message || "Google login failed", isLoading: false });
-          throw error;
-        }
+        googleLogin: async (code) => {
+    set({ isLoading: true, error: null });
+
+    try {
+        console.log("Code is : ", code);
+        const response = await axios.get(`${API_URL}/google?code=${code}`);
+
+        // ✅ first set state
+        set({
+        isAuthenticated: true,
+        user: response.data,
+        error: null,
+        isLoading: false
+        });
+
+        // ✅ then connect socket
+        get().connectSocket();
+
+    } catch (error) {
+        set({
+        error: error.response?.data?.message || "Google login failed",
+        isLoading: false
+        });
+        throw error;
+    }
     },
+
 
     removeskill: ({ skillname }) => {
         set((state) => ({
@@ -215,20 +260,39 @@ export const useClanStore = create((set, get) => ({
     },
 
     connectSocket: () => {
+    const { isAuthenticated, socket } = get();
 
-        const {isAuthenticated} = get(); 
-        if(!isAuthenticated || get().socket?.connected) return ;
-        console.log("connect socket ke andar hu mein ...")
+    if (!isAuthenticated) {
+        console.log("User not authenticated, can't connect socket.");
+        return;
+    }
 
-        const socket = io("https://hack-of-clans-backend.onrender.com", {
+    if (socket?.connected) {
+        console.log("Socket already connected:", socket.id);
+        return;
+    }
+
+    console.log("Connecting socket...");
+
+    const newSocket = io("https://hack-of-clans-backend.onrender.com", {
         withCredentials: true,
-        });
-        socket.connect()
+    });
 
-        set({
-            socket: socket 
-        })
-    }, 
+    newSocket.on("connect", () => {
+        console.log("✅ Socket connected:", newSocket.id);
+    });
+
+    newSocket.on("disconnect", () => {
+        console.log(" Socket disconnected");
+    });
+
+    newSocket.on("connect_error", (err) => {
+        console.error("Connection error:", err.message);
+    });
+
+    set({ socket: newSocket });
+    },
+
 
     disconnectSocket: () => {
         if(get().socket?.connected) get().socket.disconnect();

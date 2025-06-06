@@ -32,8 +32,11 @@ export const useChatStore =  create((set,get) => ({
         return;
       }
       //Note: socket connect hone se pehle emit nahi karooooo 
-      if (!socket.connected) {
-        socket.on("connect", () => {
+        if (!socket.connected) {
+        console.log("Socket is defined but not connected. Connecting now...");
+        socket.connect(); 
+
+        socket.once("connect", () => { // use .once to avoid duplicate emits
           console.log("Socket connected, now joining room:", teamId);
           socket.emit("join-room", teamId);
         });
