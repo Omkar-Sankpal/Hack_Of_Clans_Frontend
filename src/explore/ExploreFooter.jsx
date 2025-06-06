@@ -3,7 +3,7 @@ import React from 'react'
 const ExploreFooter = () => {
   return (
     <div className='bg-gradient-to-t from-purple-700 via-gray-950 to-black mt-10 pt-40 pb-20'>
-        <div className='relative flex font-poppins justify-evenly'>
+        <div className='relative flex flex-wrap font-poppins justify-evenly'>
             <div className='text-white p-8'>
                 <div className='font-semibold md:text-xl bg-gradient-to-r from-pink-600 via-cyan-400 to-gray-200 bg-clip-text text-transparent'>
                     About Hack of Clans 
@@ -14,7 +14,7 @@ const ExploreFooter = () => {
                     Our mission is to foster collaboration over competition, cultivate skills, and spark innovation across diverse domains. Join us in redefining what it means to build and grow together.
                 </div>
             </div> 
-            <div className='bg-gray-300 w-[2px] h-[40vh] rounded-lg mt-14 ml-4'>
+            <div className='hidden md:block md:bg-gray-300 md:w-[2px] md:h-[40vh] md:rounded-lg md:mt-14 md:ml-4'>
             </div>
             <div className='p-8'>
                 <div className='font-semibold md:text-xl bg-gradient-to-r from-pink-600 via-cyan-400 to-gray-200 bg-clip-text text-transparent'>

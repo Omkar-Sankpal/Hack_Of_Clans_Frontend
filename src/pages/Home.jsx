@@ -3,7 +3,7 @@ import { useClanStore } from '../store/clan.store';
 import Startup from './Startup.jsx';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import {motion} from 'framer-motion'
+import {color, motion} from 'framer-motion'
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Github, Instagram, Linkedin } from 'lucide-react';
 
@@ -185,7 +185,7 @@ useGSAP(()=>{
     scrollTrigger:{
       trigger:'.pavi',
       scroller:'.custom-scrollbar',
-      start:'top 70%'
+      start:'top 90%'
     }
   })
 })
@@ -930,7 +930,7 @@ useGSAP(()=>{
             </div>  
 
             {/* create */}
-            <div className='flex text-white text-7xl md:text-9xl font-bold font-poppins w-full'>
+            <div className='flex text-white text-4xl md:text-9xl font-bold font-poppins w-full'>
               <span className='create'>C</span><span className='create'>R</span><span className='create'>E</span><span className='create'>A</span><span className='create'>T</span><span className='create'>E</span>
               <div className='text-sm md:text-2xl bg-gradient-to-r from-cyan-500 via-purple-700 to-gray-400 bg-clip-text text-transparent'>
                 <span className='with'>&nbsp;W</span><span className='with'>I</span><span className='with'>T</span><span className='with'>H</span><span className='with'>{` `}P</span><span className='with'>A</span><span className='with'>S</span><span className='with'>S</span><span className='with'>I</span><span className='with'>O</span><span className='with'>N</span>
@@ -938,7 +938,7 @@ useGSAP(()=>{
             </div>
             
             {/* connect */}
-            <div className='flex text-white text-7xl md:text-9xl font-bold font-poppins w-full mt-8 justify-center'>
+            <div className='flex text-white text-4xl md:text-9xl font-bold font-poppins w-full mt-8 justify-center'>
               <span className='connect'>C</span><span className='connect'>O</span><span className='connect'>N</span><span className='connect'>N</span><span className='connect'>E</span><span className='connect'>C</span><span className='connect'>T</span>
               <div className='text-sm md:text-2xl bg-gradient-to-r from-pink-500 via-red-700 to-gray-400 bg-clip-text text-transparent'>
                 <span className='peers'>&nbsp;W</span><span className='peers'>I</span><span className='peers'>T</span><span className='peers'>H</span><span className='peers'>{` `}P</span><span className='peers'>E</span><span className='peers'>E</span><span className='peers'>R</span><span className='peers'>S</span>
@@ -946,7 +946,7 @@ useGSAP(()=>{
             </div>
 
             {/* compete */}
-            <div className='flex text-white text-7xl md:text-9xl font-bold font-poppins w-full mt-8 justify-end'>
+            <div className='flex text-white text-4xl md:text-9xl font-bold font-poppins w-full mt-8 justify-end'>
               <span className='compete'>C</span><span className='compete'>O</span><span className='compete'>M</span><span className='compete'>P</span><span className='compete'>E</span><span className='compete'>T</span><span className='compete'>E</span>
               <div className='text-sm md:text-2xl bg-gradient-to-r from-amber-500 via-teal-400 to-rose-800 bg-clip-text text-transparent'>
                 <span className='purpose'>&nbsp;W</span><span className='purpose'>I</span><span className='purpose'>T</span><span className='purpose'>H</span><span className='purpose'>{` `}P</span><span className='purpose'>U</span><span className='purpose'>R</span><span className='purpose'>P</span><span className='purpose'>O</span><span className='purpose'>S</span><span className='purpose'>E</span>
@@ -964,115 +964,135 @@ useGSAP(()=>{
             <div className='flex flex-wrap justify-evenly mt-6'>
 
               <div className='relative max-w-md w-full font-poppins text-white  p-2 pl-14 rounded-lg'>
-                <div className='absolute top-0 left-0 mt-10 bg-gray-700 rounded-2xl p-1 mr-4 omkar'>
-                  <div>
-                    <Github className='size-7 omkar'/>
-                  </div>
+                <div className='absolute top-0 left-0 mt-10 bg-gray-700 rounded-2xl p-2 mr-4 omkar'>
+                  <motion.div 
+                  whileHover={{scale:1.2}}
+                  className='py-1'>
+                    <a href="https://github.com/Omkar-Sankpal" target='blank'>
+                    <Github className='size-5 omkar'/>
+                    </a>
+                  </motion.div>
               
                 </div>
                 <motion.div 
-                className='font-bold text-xl md:text-2xl z-30 w-full'>
-                  <span className='omkar'>O</span>
-                  <span className='omkar'>M</span>
-                  <span className='omkar'>K</span>
-                  <span className='omkar'>A</span>
-                  <span className='omkar'>R&nbsp;</span>
-                  <span className='omkar'>S</span>
-                  <span className='omkar'>A</span>
-                  <span className='omkar'>N</span>
-                  <span className='omkar'>K</span>
-                  <span className='omkar'>P</span>
-                  <span className='omkar'>A</span>
-                  <span className='omkar'>L</span> 
+                className='font-bold text-xl md:text-2xl z-30 w-full cursor-default'>
+                  <span className='omkar hover:text-gray-800'>O</span>
+                  <span className='omkar hover:text-gray-700'>M</span>
+                  <span className='omkar text-gray-100 hover:text-gray-600'>K</span>
+                  <span className='omkar text-gray-100 hover:text-gray-500'>A</span>
+                  <span className='omkar text-gray-200 hover:text-gray-400'>R&nbsp;</span>
+                  <span className='omkar text-gray-300 hover:text-gray-300'>S</span>
+                  <span className='omkar text-gray-400 hover:text-gray-300'>A</span>
+                  <span className='omkar text-gray-500 hover:text-gray-200'>N</span>
+                  <span className='omkar text-gray-600 hover:text-gray-200'>K</span>
+                  <span className='omkar text-gray-700 hover:text-gray-100'>P</span>
+                  <span className='omkar text-gray-800 hover:text-gray-100'>A</span>
+                  <span className='omkar text-gray-900 hover:text-gray-50'>L</span> 
                 </motion.div>
-                <div className='omkar font-semibold mt-2 bg-gradient-to-br from-pink-600 via-cyan-300 to-gray-300 bg-clip-text text-transparent z-20'>
+                <div className='omkar text-xs md:text-sm font-semibold mt-2 bg-gradient-to-br from-gray-300 to-gray-600 bg-clip-text text-transparent z-20'>
                   "I designed the complete UI/UX of Hack of Clans in Figma, ensuring a seamless and intuitive user experience. I built the real-time chatting feature using Socket.io, allowing users to communicate instantly. I developed and integrated the backend for user authentication, team creation, and database handling. On the frontend, I connected APIs and maintained design consistency throughout the platform. I made sure every element functioned smoothly, from user login to team dashboards. My goal was to shape a platform that feels both powerful and user-friendly from the ground up."
                 </div>
               </div>
               <div className='relative max-w-md w-full text-white p-2 pl-14'>
-                <div className='absolute top-0 left-0 mt-10 bg-gray-700 rounded-2xl p-1 mr-4 tanmay'>
-                  <div>
-                    <Github className='size-7 tanmay mt-2'/>
-                  </div>
-                  <div>
-                    <Linkedin className='size-7 tanmay mt-2'/>
-                  </div>
-                  <div>
-                    <Instagram className='size-7 tanmay mt-2'/>
-                  </div>
+                <div className='absolute top-0 left-0 mt-10 bg-gray-700 rounded-2xl p-2 mr-4 tanmay'>
+                  <motion.div whileHover={{scale:1.2}} className='py-1'>
+                    <a href="https://github.com/TanmayNawlakhe" target='blank'>
+                    <Github className='size-5 tanmay '/>
+                    </a>
+                  </motion.div>
+                  <motion.div whileHover={{scale:1.2}} className='py-1'>
+                    <a href="https://in.linkedin.com/in/tanmay-nawlakhe" target='blank'>
+                    <Linkedin className='size-5 tanmay '/>
+                    </a>
+                  </motion.div>
+                  <motion.div whileHover={{scale:1.2}} className='py-1'>
+                    <a href="https://www.instagram.com/tanawlakhe?igsh=MXE3dGJ5NmRwMHc0Mg==" target='blank'>
+                    <Instagram className='size-5 tanmay '/>
+                    </a>
+                  </motion.div>
               
                 </div>
-                <div className='font-bold text-xl md:text-2xl'>
-                  <span className='tanmay'>T</span>
-                  <span className='tanmay'>A</span>
-                  <span className='tanmay'>N</span>
-                  <span className='tanmay'>M</span>
-                  <span className='tanmay'>A</span>
-                  <span className='tanmay'>Y&nbsp;</span>
-                  <span className='tanmay'>N</span>
-                  <span className='tanmay'>A</span>
-                  <span className='tanmay'>W</span>
-                  <span className='tanmay'>L</span>
-                  <span className='tanmay'>A</span>
-                  <span className='tanmay'>K</span>
-                  <span className='tanmay'>H</span>
-                  <span className='tanmay'>E</span>
+                <div className='font-bold text-xl md:text-2xl cursor-default'>
+                  <span className='tanmay text-gray-50 hover:text-gray-800'>T</span>
+                  <span className='tanmay text-gray-100 hover:text-gray-800'>A</span>
+                  <span className='tanmay text-gray-100 hover:text-gray-800'>N</span>
+                  <span className='tanmay text-gray-200 hover:text-gray-700'>M</span>
+                  <span className='tanmay text-gray-200 hover:text-gray-600'>A</span>
+                  <span className='tanmay text-gray-300 hover:text-gray-500'>Y&nbsp;</span>
+                  <span className='tanmay text-gray-300 hover:text-gray-400'>N</span>
+                  <span className='tanmay text-gray-400 hover:text-gray-400'>A</span>
+                  <span className='tanmay text-gray-500 hover:text-gray-300'>W</span>
+                  <span className='tanmay text-gray-600 hover:text-gray-200'>L</span>
+                  <span className='tanmay text-gray-700 hover:text-gray-200'>A</span>
+                  <span className='tanmay text-gray-800 hover:text-gray-100'>K</span>
+                  <span className='tanmay text-gray-800 hover:text-gray-100'>H</span>
+                  <span className='tanmay text-gray-800 hover:text-gray-50'>E</span>
                 </div>
-                <div className='tanmay font-semibold mt-2 bg-gradient-to-bl from-purple-600 via-violet-300 to-blue-300 bg-clip-text text-transparent'>
+                <div className='tanmay text-xs md:text-sm font-semibold mt-2 bg-gradient-to-br from-gray-300 to-gray-600 bg-clip-text text-transparent'>
                   "I worked on building the frontend interface for Hack of Clans. I converted the Figma designs into responsive and interactive web components using modern React practices. I focused on ensuring a clean user flow, smooth animations, and visually consistent layouts across devices. I optimized user interactions, handled page transitions, and brought the UI to life. I collaborated closely with Omkar to align frontend behavior with backend functionality. My goal was to deliver an intuitive experience that makes users feel right at home from their first visit."
                 </div>
               </div>
               <div className='relative max-w-md w-full text-white p-2 pl-14 '>
-                <div className='absolute top-0 left-0 mt-10 bg-gray-700 rounded-2xl p-1 mr-4 soham'>
-                  <div>
-                    <Github className='size-7 soham mt-2'/>
-                  </div>
-                  <div>
-                    <Linkedin className='size-7 soham mt-2'/>
-                  </div>
-                  <div>
-                    <Instagram className='size-7 soham mt-2'/>
-                  </div>
+                <div className='absolute top-0 left-0 mt-10 bg-gray-700 rounded-2xl p-2 mr-4 soham'>
+                  <motion.div whileHover={{scale:1.2}} className='py-1'>
+                    <a href="https://github.com/soham-patil-05" target='blank'>
+                    <Github className='size-5 soham '/>
+                    </a>
+                  </motion.div>
+                  <motion.div whileHover={{scale:1.2}} className='py-1'>
+                    <a href="https://in.linkedin.com/in/soham-patil-27a9b2287" target='blank'>
+                    <Linkedin className='size-5 soham '/>
+                    </a>
+                  </motion.div>
+                  <motion.div whileHover={{scale:1.2}} className='py-1'>
+                    <a href="https://www.instagram.com/soham05_?igsh=MWRqems4ZThvZ2Y2Yw==" target='blank'>
+                    <Instagram className='size-5 soham'/>
+                    </a>
+                  </motion.div>
               
                 </div>
-                <div className='font-bold text-xl md:text-2xl'>
-                  <span className='soham'>S</span>
-                  <span className='soham'>O</span>
-                  <span className='soham'>H</span>
-                  <span className='soham'>A</span>
-                  <span className='soham'>M&nbsp;</span>
-                  <span className='soham'>P</span>
-                  <span className='soham'>A</span>
-                  <span className='soham'>T</span>
-                  <span className='soham'>I</span>
-                  <span className='soham'>L</span>
+                <div className='font-bold text-xl md:text-2xl cursor-default'>
+                  <span className='soham text-gray-50 hover:text-gray-800'>S</span>
+                  <span className='soham text-gray-100 hover:text-gray-800'>O</span>
+                  <span className='soham text-gray-200 hover:text-gray-700'>H</span>
+                  <span className='soham text-gray-300 hover:text-gray-600'>A</span>
+                  <span className='soham text-gray-300 hover:text-gray-500'>M&nbsp;</span>
+                  <span className='soham text-gray-400 hover:text-gray-400'>P</span>
+                  <span className='soham text-gray-500 hover:text-gray-300'>A</span>
+                  <span className='soham text-gray-600 hover:text-gray-200'>T</span>
+                  <span className='soham text-gray-700 hover:text-gray-100'>I</span>
+                  <span className='soham text-gray-800 hover:text-gray-50'>L</span>
                 </div>
-                <div className='soham font-semibold mt-2 bg-gradient-to-bl from-orange-400 via-lime-500 to-gray-300 bg-clip-text text-transparent'>
+                <div className='soham text-xs md:text-sm font-semibold mt-2 bg-gradient-to-br from-gray-300 to-gray-600 bg-clip-text text-transparent'>
                   "I focused on gathering quality hackathon data for Hack of Clans. I developed a Python-based web scraper that fetches up-to-date hackathon listings from multiple trusted sources. I ensured the scraped data stays clean, accurate, and ready for display. I handled dynamic websites and implemented automated extraction workflows. My aim was to keep users updated with the latest hackathons without manual effort. By handling the backend logic for event sourcing, I helped enhance the platform’s core utility—bringing fresh opportunities straight to our users."
                 </div>
               </div>
               <div className='relative max-w-md w-full text-white p-2 pl-14'>
-                <div className='absolute top-0 left-0 mt-10 bg-gray-700 rounded-2xl p-1 mr-4 pavi'>
-                  <div>
-                    <Github className='size-7 pavi mt-2'/>
-                  </div>
-                  <div>
-                    <Linkedin className='size-7 pavi mt-2'/>
-                  </div>
+                <div className='absolute top-0 left-0 mt-10 bg-gray-700 rounded-2xl p-2 mr-4 pavi'>
+                  <motion.div whileHover={{scale:1.2}} className='py-1'>
+                    <a href="https://github.com/pavigupta21" target='blank'>
+                    <Github className='size-5 pavi '/>
+                    </a>
+                  </motion.div>
+                  <motion.div whileHover={{scale:1.2}} className='py-1'>
+                    <a href="https://in.linkedin.com/in/pavi-gupta" target='blank'>
+                    <Linkedin className='size-5 pavi '/>
+                    </a>
+                  </motion.div>
               
                 </div>
                 <div className='font-bold text-xl md:text-2xl'>
-                  <span className='pavi'>P</span>
-                  <span className='pavi'>A</span>
-                  <span className='pavi'>V</span>
-                  <span className='pavi'>I&nbsp;</span>
-                  <span className='pavi'>G</span>
-                  <span className='pavi'>U</span>
-                  <span className='pavi'>P</span>
-                  <span className='pavi'>T</span>
-                  <span className='pavi'>A</span>
+                  <span className='pavi text-gray-50 hover:text-gray-800'>P</span>
+                  <span className='pavi text-gray-100 hover:text-gray-700'>A</span>
+                  <span className='pavi text-gray-200 hover:text-gray-600'>V</span>
+                  <span className='pavi text-gray-300 hover:text-gray-500'>I&nbsp;</span>
+                  <span className='pavi text-gray-400 hover:text-gray-400'>G</span>
+                  <span className='pavi text-gray-500 hover:text-gray-300'>U</span>
+                  <span className='pavi text-gray-600 hover:text-gray-200'>P</span>
+                  <span className='pavi text-gray-700 hover:text-gray-100'>T</span>
+                  <span className='pavi text-gray-800 hover:text-gray-50'>A</span>
                 </div>
-                <div className=' pavi font-semibold mt-2 bg-gradient-to-br from-sky-600 via-teal-600 to-pink-600 bg-clip-text text-transparent'>
+                <div className=' pavi text-xs md:text-sm font-semibold mt-2 bg-gradient-to-br from-gray-300 to-gray-600 bg-clip-text text-transparent'>
                   "I developed the team logic for the backend of Hack of Clans. I implemented core functionality like creating teams, adding members, managing roles, and validating team data. I ensured the backend properly handles team-related actions, securely and efficiently. I focused on scalability and clean structure, enabling seamless integration with the frontend. My work ensured that users could easily form and manage their teams within the platform. I contributed to making team collaboration intuitive and reliable from the technical side."
                 </div>
               </div>
