@@ -73,3 +73,10 @@ git clone https://github.com/Omkar-Sankpal/Hack_Of_Clans_Frontend.git
 cd Hack_Of_Clans_Frontend
 npm install
 ```
+
+## 🚀 Deployment
+
+The frontend is deployed on **Render**. You can access the deployed site here:  
+👉 [Hack Of Clans](https://hack-of-clans-frontend.onrender.com)
+
+---
