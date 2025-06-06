@@ -4,6 +4,12 @@
 
 ---
 
+## Video Demo 
+
+https://github.com/user-attachments/assets/a4fb1ade-15bd-4be4-9753-cf2722943da3
+
+---
+
 ## Features
 
 - **Hackathon Search:** Easily browse and discover upcoming hackathons.
