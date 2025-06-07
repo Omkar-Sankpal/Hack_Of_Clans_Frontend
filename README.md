@@ -16,6 +16,18 @@ https://github.com/user-attachments/assets/bb0638d4-3db0-4966-9bf2-5ad0c4340328
 
 --- 
 
+## Ideation and Figma Design 
+
+Overall design [Directed Pages](https://www.figma.com/design/IzKQ1IsyMYShDiCPrAhzxK/HACK_OF_CLANS?node-id=337-1145&t=OyFEhxg5xtip20q7-1)
+
+- Explore page Figma [Explore](https://www.figma.com/design/IzKQ1IsyMYShDiCPrAhzxK/HACK_OF_CLANS?node-id=31-42&t=OyFEhxg5xtip20q7-1)
+- MyTeams page Figma [MyTeams](https://www.figma.com/design/IzKQ1IsyMYShDiCPrAhzxK/HACK_OF_CLANS?node-id=156-1313&t=OyFEhxg5xtip20q7-1)
+- Lobby page Figma [Lobby](https://www.figma.com/design/IzKQ1IsyMYShDiCPrAhzxK/HACK_OF_CLANS?node-id=307-3284&t=OyFEhxg5xtip20q7-1)
+
+**Note**: To view the working prototype select a page and open [Figma Mirror](https://www.figma.com/mirror)
+
+---
+
 ## Features
 
 - **Hackathon Search:** Easily browse and discover upcoming hackathons.
