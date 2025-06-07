@@ -8,7 +8,9 @@
 
 Sorry for the quality of video, I had to compress the video below 10MB.
 
-https://github.com/user-attachments/assets/a4fb1ade-15bd-4be4-9753-cf2722943da3
+https://github.com/user-attachments/assets/f38b732c-e5cd-430e-a994-8a5e851fc6ae
+
+https://github.com/user-attachments/assets/b1a45839-6e59-487e-8959-f21696cd00b5
 
 ---
 
