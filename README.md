@@ -10,9 +10,11 @@ Sorry for the quality of video, I had to compress the video below 10MB.
 
 https://github.com/user-attachments/assets/f38b732c-e5cd-430e-a994-8a5e851fc6ae
 
-https://github.com/user-attachments/assets/b1a45839-6e59-487e-8959-f21696cd00b5
-
 ---
+
+https://github.com/user-attachments/assets/bb0638d4-3db0-4966-9bf2-5ad0c4340328
+
+--- 
 
 ## Features
 
