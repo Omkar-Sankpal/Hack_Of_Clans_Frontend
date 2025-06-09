@@ -9,6 +9,9 @@ const LoadingSpinner = () => {
         animate = {{rotate: 360}}
         transition= {{duration:1, repeat: Infinity, ease: "easeInOut"}}
     ></motion.div>
+    <div className='font-semibold font-poppins text-white'>
+        Hang on while the Backend starts ... 
+    </div>
     </div>
   )
 }
